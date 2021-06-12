@@ -30,37 +30,38 @@ function App() {
 
   switch (size) {
     case "very small":
-      width = 3;
-      height = 3;
+      width = 2;
+      height = 2;
       strokeWidth = 1;
       break;
     case "small":
-      width = 6;
-      height = 6;
+      width = 4;
+      height = 4;
       strokeWidth = 2;
       break;
     case "medium":
-      width = 10;
-      height = 10;
+      width = 8;
+      height = 8;
       strokeWidth = 4;
       break;
 
     case "big":
-      width = 16;
-      height = 16;
+      width = 12;
+      height = 12;
       strokeWidth = 6;
       break;
 
     case "very big":
-      width = 24;
-      height = 24;
+      width = 20;
+      height = 20;
       strokeWidth = 10;
       break;
     default:
-      width = 10;
-      height = 10;
+      width = 8;
+      height = 8;
       strokeWidth = 4;
   }
+
 
 
   return (
@@ -158,7 +159,7 @@ function App() {
         </Box>
 
         <Box gridArea="main" justify="center" align="center">
-          <Moire spin={spin} sideways={sideways} upAndDown={upAndDown} variant={variant} speed={speed} orientation={orientation} width={width} height={height} strokeWidth={strokeWidth} color={color} />
+          <Moire spin={spin} sideways={sideways} upAndDown={upAndDown} variant={variant} speed={speed} orientation={orientation} width={variant === "lines" && orientation === "diagonal" ? width * 1.5 : width} height={variant === "lines" && orientation === "diagonal" ? height * 1.5 : height} strokeWidth={variant === "waves" ? strokeWidth / 2 : strokeWidth} color={color} />
         </Box>
       </Grid>
     </Grommet >
