@@ -1,0 +1,135 @@
+.spin {
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moveSideways {
+  animation-name: moveSideways;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes moveSideways {
+  0% {
+    transform: translate(-100%);
+  }
+  50% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+.moveUpAndDown {
+  animation-name: moveUpAndDown;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes moveUpAndDown {
+  0% {
+    transform: translate(0, -100%);
+  }
+  50% {
+    transform: translate(0, 100%);
+  }
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+.moveSideways.moveUpAndDown {
+  animation-name: moveBoth;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes moveBoth {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  50% {
+    transform: translate(100%, 100%);
+  }
+  100% {
+    transform: translate(-100%, -100%);
+  }
+}
+
+.moveSideways.moveUpAndDown.spin {
+  animation-name: moveBothAndSpin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes moveBothAndSpin {
+  0% {
+    transform: translate(-100%, -100%) rotate(0deg);
+  }
+  50% {
+    transform: translate(100%, 100%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-100%, -100%) rotate(0deg);
+  }
+}
+
+.moveSideways.spin {
+  animation-name: moveSidewaysAndSpin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes moveSidewaysAndSpin {
+  0% {
+    transform: translate(-100%) rotate(0deg);
+  }
+  50% {
+    transform: translate(100%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-100%) rotate(0deg);
+  }
+}
+
+.moveUpAndDown.spin {
+  animation-name: moveUpAndDownAndSpin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes moveUpAndDownAndSpin {
+  0% {
+    transform: translate(0, -100%) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, 100%) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, -100%) rotate(0deg);
+  }
+}
+
+@media all and (orientation: portrait) {
+  .patternContainer {
+    width: 70vw;
+    height: 70vw;
+  }
+}
+@media all and (orientation: landscape) {
+  .patternContainer {
+    width: 70vh;
+    height: 70vh;
+  }
+}
