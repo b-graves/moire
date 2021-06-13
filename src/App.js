@@ -100,8 +100,30 @@ function App() {
               </Box>
             </Box>
 
+            {variant === "lines" && <Box >
+              <Heading margin="xsmall" level="4" >Orientation</Heading>
+              <Box direction="row" wrap
+              >
+                <Button margin="xsmall" size="small" primary={orientation === "horizontal"} secondary={orientation !== "horizontal"} onClick={() => setOrientation("horizontal")} label="Horizontal"></Button>
+
+                <Button margin="xsmall" size="small" primary={orientation === "vertical"} secondary={orientation !== "vertical"} onClick={() => setOrientation("vertical")} label="Vertical"></Button>
+
+                <Button margin="xsmall" size="small" primary={orientation === "diagonal"} secondary={orientation !== "diagonal"} onClick={() => setOrientation("diagonal")} label="Diagonal"></Button>
+              </Box>
+            </Box>}
+
+            {variant === "circles" && <Box >
+              <Heading margin="xsmall" level="4" >Dot Arrangement</Heading>
+              <Box direction="row" wrap
+              >
+                <Button margin="xsmall" size="small" primary={orientation === "horizontal"} secondary={orientation !== "horizontal" || orientation === "vertical"} onClick={() => setOrientation("horizontal")} label="Rows"></Button>
+
+                <Button margin="xsmall" size="small" primary={orientation === "diagonal"} secondary={orientation !== "diagonal"} onClick={() => setOrientation("diagonal")} label="Polka"></Button>
+              </Box>
+            </Box>}
+
             <Box >
-              <Heading margin="xsmall" level="4" >Speed</Heading>
+              <Heading margin="xsmall" level="4" >Size</Heading>
               <Box direction="row" wrap
               >
                 <Button margin="xsmall" size="small" primary={size === "very big"} secondary={size !== "very big"} onClick={() => setSize("very big")} label="Very Big"></Button>
@@ -117,17 +139,7 @@ function App() {
             </Box>
 
 
-            {variant === "lines" && <Box >
-              <Heading margin="xsmall" level="4" >Orientation</Heading>
-              <Box direction="row" wrap
-              >
-                <Button margin="xsmall" size="small" primary={orientation === "horizontal"} secondary={orientation !== "horizontal"} onClick={() => setOrientation("horizontal")} label="Horizontal"></Button>
 
-                <Button margin="xsmall" size="small" primary={orientation === "vertical"} secondary={orientation !== "vertical"} onClick={() => setOrientation("vertical")} label="Vertical"></Button>
-
-                <Button margin="xsmall" size="small" primary={orientation === "diagonal"} secondary={orientation !== "diagonal"} onClick={() => setOrientation("diagonal")} label="Diagonal"></Button>
-              </Box>
-            </Box>}
 
             <Box >
               <Heading margin="xsmall" level="4" >Movement</Heading>

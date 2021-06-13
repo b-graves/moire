@@ -22,10 +22,7 @@ function Pattern({ variant, orientation, color, strokeWidth, width, height, laye
           {...props}
         />
       case "circles":
-        return <PatternCircles
-          radius={strokeWidth / 4}
-          {...props}
-        />
+        return <PatternCircles id={layer} height={width} width={width} radius={orientation === "diagonal" ? strokeWidth / 2 : strokeWidth / 2} fill="black" complement={orientation === "diagonal"} />
       case "hexagons":
         return <PatternHexagons
           {...props}
